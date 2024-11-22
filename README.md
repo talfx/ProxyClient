@@ -1,5 +1,4 @@
 ### ProxyClient
 ### Made with Python
 
-#### Main info at Proxy Server:
-https://github.com/PrecisionLabsGO/ProxyServer/tree/main
+#### Made for testing connections and usage of other PCs, retrieving stats for data analysis, such as IPs, heartbeats, location and more.
