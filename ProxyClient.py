@@ -5,7 +5,7 @@ import time
 import platform
 
 # Configuration
-CENTRAL_SERVER_IP = '192.168.56.1'  # Replace with your actual server IP
+CENTRAL_SERVER_IP = ''  # Replace with your actual server IP
 CENTRAL_SERVER_PORT = 8080
 PROXY_PORT = 8899
 PROXY_PROTOCOL = 'HTTP'
@@ -33,7 +33,7 @@ def register_proxy(ip, port, protocol):
         'platform': platform.platform()  # More details
     }
     try:
-        response = requests.post(url, json=data, auth=('PrecisionData', 'PCfortress9!'), timeout=10)
+        response = requests.post(url, json=data, auth=('', ''), timeout=10)
         if response.status_code == 200:
             print('Registeration sent successfully')
             return True
@@ -47,7 +47,7 @@ def send_heartbeat(ip, port):
     url = f'http://{CENTRAL_SERVER_IP}:{CENTRAL_SERVER_PORT}/heartbeat'
     data = {'apiKey': API_KEY,'ip': ip, 'port': port}
     try:
-        response = requests.post(url, json=data, auth=('PrecisionData', 'PCfortress9!'), timeout=10)
+        response = requests.post(url, json=data, auth=('', ''), timeout=10)
         if response.status_code == 200:
             print(f'Heartbeat sent successfully from {ip}:{port}')
         else:
